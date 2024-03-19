@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+	<html lang="es">
+		<head>
+			 <meta charset = "UTF-8">
+			 <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+			 <meta http-equiv= "X-UA-Compatible" content = "ie=edge">
+			 <link rel="stylesheet" type="text/css" href="estilos.css">
+			 <link rel="preconnect" href="https://fonts.googleapis.com">
+			 <link rel="preconnect" href="https://fonts.googleapis.com">
+			 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+			 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Staatliches&display=swap" rel="stylesheet">
+			 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+			 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=Staatliches&display=swap" rel="stylesheet">
+			 <link rel="preconnect" href="https://fonts.googleapis.com">
+			 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+			 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Staatliches&display=swap" rel="stylesheet">
+			
+			 <title>CALCULADORA</title>
+			
+		</head>
+
+
+
+<body class="bodyfondo">
+	<div class="divcalculadora">
+
+	<h1>Estima tus gastos para los próximos meses</h1>
+
+<form name="subte">
+<h3> Cantidad de Subtes que utilizas por dia para viajar a la Facultad </h3>
+<input name="num" type="text" value="" onblur="multiplica(this.form)" />  
+
+<h3> Gasto proyectado para el mes de Marzo con aumento de $550 </h3>
+<input id="numero1" name="res" type="text" value=""/>
+</form> <br> 
+<form name="cole">
+<h3> Cantidad de Colectivos que utilizas por dia para viajar a la Facultad </h3>
+<input name="num" type="text" value="" onblur="multiplica(this.form)" />
+
+<h3> Gasto proyectado para el mes de Marzo con aumento de $800 </h3>
+<input id="numero2" name="res" type="text" value=""/>
+</form> 
+
+<form name="tren">
+<h3> Cantidad de Trenes que utilizas por dia para viajar a la Facultad </h3>
+<input name="num" type="text" value="" onblur="multiplica(this.form)"/>
+<h3> Gasto proyectado para el mes de Marzo con aumento de $600 </h3>
+<input id="numero3" name="res" type="text" value=""/>
+</form> 
+
+<h3>Gasto proyectado para el mes de Marzo con aumento por dia, ida y vuelta</h3>
+
+<div class="container">
+	<div class="center">
+	<button onclick = "sumar()" class="button_slide slide_right" class="suma">Sumar</button>
+	</div>
+  </div> 
+
+  <div id="suma"></div> 
+  <script>
+    function sumar() {
+      var numero1 = parseFloat(document.getElementById('numero1').value);
+      var numero2 = parseFloat(document.getElementById('numero2').value);
+      var numero3 = parseFloat(document.getElementById('numero3').value);
+	  
+      var resultado1 = numero1 + numero2 + numero3;
+      
+      document.getElementById('suma').innerText = 'La suma es: ' + resultado1 * 2;
+    }
+  </script>
+
+<form name="dias">
+<h3> Cantidad de dias a la semana que cursas en la Facultad </h3>
+<input name="num" type="text" value="" onblur="multiplica(this.form)"/>
+
+<h3> Gasto proyectado para Marzo con aumento en la totalidad del mes </h3>
+<input name="res" type="text" value=""/>
+</form> 
+
+
+
+<script language="javascript">
+
+	function multiplica(form){
+		var x=0;
+		var y = 600 ; //trenes
+		var z = 800 ; //bondis
+		var h = 550 ; //subte
+		
+		var numero1 = parseFloat(document.getElementById('numero1').value);
+		var numero2 = parseFloat(document.getElementById('numero2').value);
+		var numero3 = parseFloat(document.getElementById('numero3').value);
+	  
+		var resultado1 = numero1 + numero2 + numero3;
+		
+		x = parseFloat (cole.num.value);
+		resultado = x * z;
+		cole.res.value=resultado; 
+		
+		x = parseFloat (tren.num.value);
+		resultado = x * y;
+		tren.res.value=resultado; 
+		
+		x = parseFloat (subte.num.value);
+		resultado = x * h;
+		subte.res.value=resultado; 
+		
+		x = parseFloat (dias.num.value);
+		resultado = x * resultado1 * 4;
+		dias.res.value=resultado;
+		
+		}
+
+</script>	
+
+
+
+<div class="piedepagina">
+	<br>
+</br>
+
+	<a href="https://www.lacampora.org/2015/07/07/los-jovenes-seguimos-haciendo-historia-boleto-estudiantil-gratuito-en-bs-as/"  target="_blank">  <div class="button_slide slide_right"> Conce nuestro proyecto de Ley para un Boleto Estudiantil</div></a>
+
+
+<br>
+</br>
+
+<a href="https://www.lanacion.com.ar/economia/cuanto-cuesta-el-boleto-de-colectivo-y-tren-tras-el-aumento-de-febrero-2024-nid06022024/"  target="_blank">  <div class="button_slide slide_right"> Fuentes </div></a>
+
+</div>
+</div>
+</body>
+
+
+
+
+
+
+</html>
